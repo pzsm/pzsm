@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>破执工作室 - Windows系统资源下载站</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        darkbg: '#0f172a',
+                        cardbg: '#1e293b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 10px 30px rgba(37, 99, 235, 0.25);
+            }
+            .gradient-bg {
+                background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            }
+            /* 导航激活高亮样式 */
+            .nav-active {
+                color: #2563eb !important;
+            }
+        }
+        body::-webkit-scrollbar {
+            width: 6px;
+        }
+        body::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-darkbg text-gray-200 min-h-screen">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-darkbg/90 backdrop-blur-md border-b border-slate-700">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i class="fa fa-windows text-primary text-2xl"></i>
+                <h1 class="text-xl md:text-2xl font-bold text-white">破执工作室</h1>
+            </div>
+            <nav class="hidden md:flex gap-6">
+                <a href="#resource" class="nav-link hover:text-primary transition-colors">资源下载</a>
+                <a href="#about" class="nav-link hover:text-primary transition-colors">工作室介绍</a>
+                <a href="#partner" class="nav-link hover:text-primary transition-colors">合作伙伴</a>
+                <a href="#contact" class="nav-link hover:text-primary transition-colors">商务咨询</a>
+            </nav>
+            <button class="md:hidden text-xl">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 横幅区域 -->
+    <section class="gradient-bg py-16 md:py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold text-white text-shadow mb-4">
+                Windows镜像 & 系统优化工具资源站
+            </h2>
+            <p class="text-slate-300 max-w-2xl mx-auto text-lg mb-8">
+                提供纯净系统镜像、系统精简优化工具、驱动工具，仅供学习交流使用
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#resource" class="bg-primary hover:bg-blue-700 px-8 py-3 rounded-lg font-medium transition-all">
+                    <i class="fa fa-download mr-2"></i>前往资源列表
+                </a>
+                <a href="#contact" class="border border-primary text-primary hover:bg-primary/10 px-8 py-3 rounded-lg font-medium transition-all">
+                    商务咨询装机定制
+                </a>
+                <!-- 新增：加入QQ群按钮，把href改成你的群链接 -->
+                <a href="https://qm.qq.com/q/AzXBM3Grks" target="_blank" class="border border-green-500 text-green-500 hover:bg-green-500/10 px-8 py-3 rounded-lg font-medium transition-all">
+                    <i class="fa fa-qq mr-2"></i>加入QQ群
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 站点公告模块 -->
+    <section id="notice" class="container mx-auto px-4 mt-8">
+        <div id="noticeBox" class="relative bg-blue-900/30 border border-blue-700 rounded-xl p-5">
+            <button onclick="closeNotice()" class="absolute top-3 right-4 text-slate-400 hover:text-white text-xl">
+                <i class="fa fa-times"></i>
+            </button>
+            <h4 class="text-lg font-bold text-blue-400 mb-2">
+                <i class="fa fa-bullhorn mr-2"></i>站点公告
+            </h4>
+          <p class="text-slate-300 text-sm"> &nbsp;1、本站所有系统资源均为原版镜像，去除捆绑软件，下载资源建议校验MD5哈希值，防止文件损坏</p>
+          <p class="text-slate-300 text-sm">&nbsp;2、工具仅供个人学习使用，禁止商用倒卖本站资源，如需商用装机服务请联系工作室客服&nbsp;</p>
+          <p class="text-slate-300 text-sm">&nbsp;3、链接失效可通过下方联系方式提交反馈，工作人员定期更新资源链接</p>
+            <p class="text-slate-300 text-sm">&nbsp;4、提供远程装机、电脑故障调试、系统定制优化付费服务，详情咨询客服 </p>
+        </div>
+    </section>
+
+    <!-- 资源下载区 -->
+    <section id="resource" class="py-16 container mx-auto px-4">
+        <h3 class="text-2xl font-bold text-center mb-2">📦 资源下载中心</h3>
+        <p class="text-slate-400 text-center mb-12">所有资源仅用于个人学习测试，请遵守相关版权法规</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- 卡片1 Windows镜像 -->
+            <div class="card-hover bg-cardbg rounded-xl p-6 border border-slate-700">
+                <div class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
+                    <i class="fa fa-desktop text-primary text-xl"></i>
+                </div>
+                <h4 class="text-xl font-semibold mb-2">Windows 原版镜像</h4>
+                <p class="text-slate-400 text-sm mb-4">Win10 / Win11 官方原版ISO镜像，无捆绑、纯净原版</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="text-xs bg-slate-700 px-2 py-1 rounded">Win11</span>
+                    <span class="text-xs bg-slate-700 px-2 py-1 rounded">Win10</span>
+                    <span class="text-xs bg-slate-700 px-2 py-1 rounded">ISO</span>
+                </div>
+                <a href="https://www.xitongku.com/" target="_blank" class="block w-full text-center bg-slate-700 hover:bg-slate-600 py-2.5 rounded-lg transition">
+                    <i class="fa fa-cloud-download mr-1"></i>点击获取下载
+                </a>
+            </div>
+
+            <!-- 卡片2 系统优化工具 -->
+            <div class="card-hover bg-cardbg rounded-xl p-6 border border-slate-700">
+                <div class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
+                    <i class="fa fa-cogs text-primary text-xl"></i>
+                </div>
+                <h4 class="text-xl font-semibold mb-2">系统优化工具箱</h4>
+                <p class="text-slate-400 text-sm mb-4">系统精简、关闭广告、服务优化、磁盘清理工具合集</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="text-xs bg-slate-700 px-2 py-1 rounded">优化脚本</span>
+                    <span class="text-xs bg-slate-700 px-2 py-1 rounded">清理工具</span>
+                </div>
+                <a href="#" target="_blank" class="block w-full text-center bg-slate-700 hover:bg-slate-600 py-2.5 rounded-lg transition">
+                    <i class="fa fa-cloud-download mr-1"></i>暂无来源
+                </a>
+            </div>
+
+            <!-- 卡片3 PE装机工具 -->
+            <div class="card-hover bg-cardbg rounded-xl p-6 border border-slate-700">
+                <div class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
+                    <i class="fa fa-usb text-primary text-xl"></i>
+                </div>
+                <h4 class="text-xl font-semibold mb-2">PE装机工具</h4>
+                <p class="text-slate-400 text-sm mb-4">U盘启动盘制作工具、分区工具、驱动离线包</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="text-xs bg-slate-700 px-2 py-1 rounded">U盘PE</span>
+                    <span class="text-xs bg-slate-700 px-2 py-1 rounded">驱动包</span>
+                </div>
+                <a href="https://www.sysceo.com/software-softwarei-id-121.html" target="_blank" class="block w-full text-center bg-slate-700 hover:bg-slate-600 py-2.5 rounded-lg transition">
+                    <i class="fa fa-cloud-download mr-1"></i>点击获取下载
+                </a>
+            </div>
+        </div>
+
+        <!-- 重要提示 -->
+        <div class="mt-12 bg-yellow-900/30 border border-yellow-700 rounded-lg p-5">
+            <h5 class="text-yellow-400 font-medium mb-2"><i class="fa fa-exclamation-triangle mr-2"></i>免责声明</h5>
+            <p class="text-slate-300 text-sm">本站提供资源仅用于技术学习交流。Windows系统版权归属微软公司，如需正常使用请购买正版授权。请勿用于商业用途。</p>
+        </div>
+    </section>
+
+    <!-- 工作室介绍 -->
+    <section id="about" class="py-16 bg-cardbg">
+        <div class="container mx-auto px-4">
+            <h3 class="text-2xl font-bold text-center mb-8">关于破执工作室</h3>
+            <div class="max-w-3xl mx-auto text-center text-slate-300 leading-relaxed">
+              <p class="mb-4">专注Windows系统调试、装机技术、系统优化研究，分享各类实用装机工具与原版系统资源。</p>
+                <p>提供系统安装指导、故障排查、系统优化方案，欢迎技术爱好者交流探讨。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 合作伙伴板块 -->
+    <section id="partner" class="py-16 container mx-auto px-4">
+        <h3 class="text-2xl font-bold text-center mb-2">🤝 合作伙伴</h3>
+        <p class="text-slate-400 text-center mb-12">友好合作站点，欢迎互相交流学习</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+            <!-- 合作伙伴1 -->
+            <div class="card-hover bg-cardbg rounded-xl p-5 border border-slate-700 text-center">
+                <h4 class="text-lg font-medium mb-3">阿宏&nbsp;</h4>
+                <p class="text-slate-400 text-sm mb-4">&nbsp;喜欢搞数码的阿宏</p>
+                <a href="https://ahong.wiki/" target="_blank" class="block w-full text-center bg-primary/20 hover:bg-primary/30 text-primary py-2 rounded-lg transition">
+                    <i class="fa fa-external-link mr-1"></i>访问站点
+                </a>
+            </div>
+            <!-- 合作伙伴2 -->
+            <div class="card-hover bg-cardbg rounded-xl p-5 border border-slate-700 text-center">
+                <h4 class="text-lg font-medium mb-3">浩晨&nbsp;</h4>
+                <p class="text-slate-400 text-sm mb-4">爱玩游戏的浩晨&nbsp;</p>
+                <a href="https://haochenshuma1.github.io/hcsmgz" target="_blank" class="block w-full text-center bg-primary/20 hover:bg-primary/30 text-primary py-2 rounded-lg transition">
+                    <i class="fa fa-external-link mr-1"></i>访问站点
+                </a>
+            </div>
+            <!-- 合作伙伴3 -->
+            <div class="card-hover bg-cardbg rounded-xl p-5 border border-slate-700 text-center">
+                <h4 class="text-lg font-medium mb-3">辰宝</h4>
+                <p class="text-slate-400 text-sm mb-4">阿宏助理</p>
+                <a href="https://xccb.mysxl.cn/" target="_blank" class="block w-full text-center bg-primary/20 hover:bg-primary/30 text-primary py-2 rounded-lg transition">
+                    <i class="fa fa-external-link mr-1"></i>访问站点
+                </a>
+            </div>
+            <!-- 合作伙伴4 -->
+            <div class="card-hover bg-cardbg rounded-xl p-5 border border-slate-700 text-center">
+                <h4 class="text-lg font-medium mb-3">阿陈</h4>
+                <p class="text-slate-400 text-sm mb-4">喜欢搞数码的阿陈&nbsp;</p>
+                <a href="https://achen.lanzon.site/" target="_blank" class="block w-full text-center bg-primary/20 hover:bg-primary/30 text-primary py-2 rounded-lg transition">
+                    <i class="fa fa-external-link mr-1"></i>访问站点
+                </a>
+            </div>
+            <!-- 合作伙伴5 -->
+            <div class="card-hover bg-cardbg rounded-xl p-5 border border-slate-700 text-center">
+                <h4 class="text-lg font-medium mb-3">阿炜&nbsp;</h4>
+                <p class="text-slate-400 text-sm mb-4">爱装机的小卤君&nbsp;</p>
+                <a href="https://lujun-david.mysxl.cn/" target="_blank" class="block w-full text-center bg-primary/20 hover:bg-primary/30 text-primary py-2 rounded-lg transition">
+                    <i class="fa fa-external-link mr-1"></i>访问站点
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们板块 -->
+    <section id="contact" class="py-16 container mx-auto px-4">
+        <h3 class="text-2xl font-bold text-center mb-10">联系我们</h3>
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- 左侧联系方式 -->
+            <div class="bg-cardbg rounded-xl p-6 border border-slate-700 card-hover">
+                <h4 class="text-xl font-bold mb-5 flex items-center">
+                    <i class="fa fa-address-card text-primary mr-2"></i>在线联系方式
+                </h4>
+                <div class="space-y-3 text-slate-300">
+                    <p><i class="fa fa-qq text-primary mr-2"></i>QQ：1209787752</p>
+                    <p><i class="fa fa-weixin text-green-400 mr-2"></i>微信：pozhiNB114514</p>
+                    <p><i class="fa fa-phone text-yellow-400 mr-2"></i>电话：15916620385</p>
+                    <p><i class="fa fa-envelope text-cyan-400 mr-2"></i>邮箱：1209787752@qq.com</p>
+                </div>
+            </div>
+            <!-- 右侧业务范围 -->
+            <div class="bg-cardbg rounded-xl p-6 border border-slate-700 card-hover">
+                <h4 class="text-xl font-bold mb-5 flex items-center">
+                    <i class="fa fa-briefcase text-primary mr-2"></i>业务范围
+                </h4>
+                <div class="space-y-2 text-slate-300">
+                    <p>•电脑远程重装系统 </p>
+                    <p>•系统精简美化 </p>
+                    <p>•114514 </p>
+                    <p>•3.1415926...... </p>
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部 -->
+    <footer class="bg-cardbg border-t border-slate-700 py-8">
+        <div class="container mx-auto px-4 text-center text-slate-400 text-sm">
+            <p>© 2026 破执工作室 | 资源仅供学习交流</p>
+        </div>
+    </footer>
+
+    <script>
+        // 关闭公告
+        function closeNotice(){
+            const noticeBox = document.getElementById("noticeBox");
+            if(noticeBox){
+                noticeBox.style.display = 'none';
+            }
+        }
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetDom = document.querySelector(targetId);
+                if(targetDom){
+                    targetDom.scrollIntoView({behavior:'smooth'});
+                }
+            });
+        });
+
+        // 滚动导航高亮（修复商务咨询切换问题）
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section[id]');
+        const offset = 150;
+
+        function activeNavHighlight() {
+            const scrollY = window.scrollY;
+            let currentId = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - offset;
+                const sectionHeight = section.offsetHeight;
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    currentId = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('nav-active');
+                if(link.getAttribute('href') === `#${currentId}`){
+                    link.classList.add('nav-active');
+                }
+            });
+        }
+        window.addEventListener('scroll', activeNavHighlight);
+        window.addEventListener('load', activeNavHighlight);
+    </script>
+</body>
+</html>
